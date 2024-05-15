@@ -1,0 +1,89 @@
+.modal {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.contas{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.margin-25 {
+    margin-right: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Estilos para o cabeçalho da tabela */
+  th {
+    background-color: #f2f2f2; /* Cinza claro */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilos para as linhas pares */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Branco */
+  }
+  
+  /* Estilos para as linhas ímpares */
+  tr:nth-child(odd) {
+    background-color: #e6e6e6; /* Cinza claro */
+  }
+  
+  /* Estilos para as células */
+  td {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid #dddddd;
+  }
+  
+  /* Estilos para destacar a primeira coluna (opcional) */
+  td:first-child {
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Estilos para o cabeçalho da tabela */
+  th {
+    background-color: #f2f2f2; /* Cinza claro */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilos para as linhas pares */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Branco */
+  }
+  
+  /* Estilos para as linhas ímpares */
+  tr:nth-child(odd) {
+    background-color: #e6e6e6; /* Cinza claro */
+  }
+  
+  /* Estilos para as células */
+  td {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid #dddddd;
+    width: auto; /* Definir largura automática */
+  }
+  
+  /* Estilos para destacar a primeira coluna (opcional) */
+  td:first-child {
+    font-weight: bold;
+  }
+  

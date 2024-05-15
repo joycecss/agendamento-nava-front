@@ -1,0 +1,82 @@
+<form [formGroup]="agendamento">
+    <div class="modal">
+      <div>
+        <button (click)="abrirAgendar()">Agendamento</button>
+        <button (click)="abrirAgendamentos()">Meus agendamentos</button>
+      </div>
+      <div [hidden]="isAgendarOpen">
+        <div class="row contas">
+          <div class="col-2 margin-25">
+            <label [for]="'contaDestino'">Conta Origem: </label>
+            <span>{{agendamento.value.contaOrigem}}</span>
+          </div>
+          <div class="col-2">
+              <label [for]="'contaDestino'">Conta Destino: </label>
+              <input  type="number" formControlName="contaDestino">
+          </div>
+        </div>
+        <div class="row contas">
+          <div class="col-12 margin-25 ">
+            <label [for]="'vlTransferencia'">Valor Transfência: </label>
+            <input type="number" (ngModelChange)="atualizarTaxaAndVlTotal()" formControlName="vlTransferencia" step="0.01">
+          </div>
+        </div>
+        <div class="row contas">
+          <div class="col-2 margin-25">
+            <label [for]="'dtAgendamento'">Data de agendamento: </label>
+            <span>{{dataHoje}}</span>
+          </div>
+          <div class="col-2">
+              <label [for]="'dtTransferencia'">Data de transfêrencia: </label>
+              <input type="date" (blur)="atualizarTaxaAndVlTotal()" formControlName="dtTransferencia">
+          </div>
+        </div>
+        <div class="row contas">
+          <div class="col-2 margin-25">
+            <label [for]="'taxa'">Taxa: </label>
+            <span>{{taxa + "%"}}</span>
+          </div>
+        </div>
+        <div class="row contas">
+          <div class="col-2 margin-25">
+            <label [for]="'vlTotal'">Valor após aplicação da taxa: </label>
+            <span>{{vlTotal}}</span>
+          </div>
+        </div>
+  
+        <div class="row contas">
+          <button type="submit"  (click)="onSubmit()">Agendar</button>
+        </div>
+      </div>
+
+      <div [hidden]="isAgendamentosOpen">
+        <table>
+          <thead>
+            <tr>
+              <th>Nº da Transfência</th>
+              <th>Conta Origem</th>
+              <th>Conta Destino</th>
+              <th>Dt. Agendamento</th>
+              <th>DT. Transfência</th>
+              <th>Taxa</th>
+              <th>Vl. Transfência</th>
+              <th>Vl. Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of dados">
+              <td>{{ item.idAgendamentos }}</td>
+              <td>{{ item.contaOrigem }}</td>
+              <td>{{ item.contaDestino }}</td>
+              <td>{{ item.dtAgendamento | date: 'dd/MM/yyyy' }}</td>
+              <td>{{ item.dtTransferencia | date: 'dd/MM/yyyy' }}</td>
+              <td>{{ item.taxa + "%" }}</td>
+              <td>{{ item.vlTransferencia | currency: 'BRL' }}</td>
+              <td>{{ item.vlTotal | currency: 'BRL' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </form>
